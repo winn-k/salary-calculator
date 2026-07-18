@@ -67,6 +67,9 @@ export default function RootLayout({
               <Link href="/" className="transition-colors hover:text-indigo-600">
                 계산기
               </Link>
+              <Link href="/table" className="transition-colors hover:text-indigo-600">
+                연봉별 표
+              </Link>
               <Link href="/guide" className="transition-colors hover:text-indigo-600">
                 사용법·FAQ
               </Link>
@@ -81,6 +84,9 @@ export default function RootLayout({
             <nav className="flex flex-wrap gap-x-4 gap-y-2">
               <Link href="/" className="transition-colors hover:text-indigo-600">
                 홈
+              </Link>
+              <Link href="/table" className="transition-colors hover:text-indigo-600">
+                연봉별 표
               </Link>
               <Link href="/guide" className="transition-colors hover:text-indigo-600">
                 사용법·FAQ

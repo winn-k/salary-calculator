@@ -158,6 +158,30 @@ export default function Home() {
             에서 확인하실 수 있습니다.
           </p>
         </section>
+
+        {/* 연봉별 실수령액 바로가기 */}
+        <section className="mt-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h2 className="flex items-center gap-2 text-base font-semibold text-slate-900">
+            <span className="h-4 w-1 rounded-full bg-indigo-500" />
+            연봉별 실수령액 바로 보기
+          </h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {[30000000, 36000000, 40000000, 50000000, 60000000, 70000000].map((a) => (
+              <Link
+                key={a}
+                href={`/salary/${a}`}
+                className="rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-700 transition-colors hover:bg-indigo-100 hover:text-indigo-700"
+              >
+                {(a / 10000).toLocaleString("ko-KR")}만원
+              </Link>
+            ))}
+          </div>
+          <p className="mt-4 text-sm">
+            <Link href="/table" className="font-medium text-indigo-600 hover:underline">
+              연봉별 실수령액 표 전체 보기 (2,000만원~1억) →
+            </Link>
+          </p>
+        </section>
       </div>
 
       {/* 구조화 데이터 (검색엔진용) */}
