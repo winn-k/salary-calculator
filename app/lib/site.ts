@@ -10,7 +10,7 @@ export const site = {
   // 사이트 소유 확인 코드 (값을 받으면 여기에 붙여넣기만 하면 됩니다)
   verification: {
     // 구글 서치콘솔 > HTML 태그 방식의 content="..." 값
-    google: "",
+    google: "BPURTC_2216BDkf1V7Yy53EQ38fNVtUGmc6f1-MpXPc",
     // 네이버 서치어드바이저 > HTML 태그 방식의 content="..." 값
     naver: "",
   },
