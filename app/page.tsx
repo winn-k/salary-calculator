@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { calculateSalary, formatWon } from "./lib/salary";
 
@@ -34,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 py-10 px-4 text-slate-900">
+    <main className="py-10 px-4">
       <div className="mx-auto w-full max-w-xl">
         <header className="mb-6 text-center">
           <h1 className="text-2xl font-bold sm:text-3xl">연봉 실수령액 계산기</h1>
@@ -124,7 +125,53 @@ export default function Home() {
           과세표준 기준으로 계산하여 실제 매월 원천징수액·연말정산 결과와 차이가 있을 수
           있습니다. 참고용으로만 활용해 주세요.
         </p>
+
+        {/* 설명 콘텐츠 (SEO / 이용자 안내) */}
+        <section className="mt-8 rounded-2xl bg-white p-6 text-sm leading-relaxed text-slate-600 shadow-sm ring-1 ring-slate-200">
+          <h2 className="text-base font-semibold text-slate-800">
+            연봉 실수령액이란?
+          </h2>
+          <p className="mt-2">
+            연봉 실수령액은 계약 연봉(세전)에서 국민연금·건강보험·장기요양보험·고용보험(4대보험)과
+            소득세·지방소득세를 뺀 뒤 실제로 통장에 들어오는 금액입니다. 같은 연봉이라도
+            비과세 항목(식대 등)과 부양가족 수에 따라 실수령액이 달라집니다.
+          </p>
+
+          <h2 className="mt-5 text-base font-semibold text-slate-800">공제 항목 한눈에</h2>
+          <ul className="mt-2 list-disc space-y-1 pl-5">
+            <li>국민연금: 과세 대상 월급의 4.5% (기준소득월액 상·하한 적용)</li>
+            <li>건강보험: 과세 대상 월급의 3.545%</li>
+            <li>장기요양보험: 건강보험료의 12.95%</li>
+            <li>고용보험: 과세 대상 월급의 0.9%</li>
+            <li>소득세·지방소득세: 소득·부양가족 수에 따라 누진 적용</li>
+          </ul>
+
+          <p className="mt-5">
+            더 자세한 사용 방법과 자주 묻는 질문은{" "}
+            <Link href="/guide" className="font-medium text-blue-600 hover:underline">
+              사용법·FAQ 페이지
+            </Link>
+            에서 확인하실 수 있습니다.
+          </p>
+        </section>
       </div>
+
+      {/* 구조화 데이터 (검색엔진용) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "연봉 실수령액 계산기",
+            applicationCategory: "FinanceApplication",
+            operatingSystem: "Web",
+            offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+            description:
+              "연봉을 입력하면 4대보험과 세금을 뺀 월 실수령액을 계산해 주는 무료 도구.",
+          }),
+        }}
+      />
     </main>
   );
 }
