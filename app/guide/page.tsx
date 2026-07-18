@@ -38,7 +38,10 @@ export default function GuidePage() {
         <h1 className="text-2xl font-bold">사용법 · 자주 묻는 질문</h1>
 
         <section className="mt-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-lg font-semibold">사용 방법</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+            <span className="h-5 w-1.5 rounded-full bg-indigo-500" />
+            사용 방법
+          </h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-slate-600">
             <li>
               <b>연봉(세전)</b>을 입력합니다. 계약서상 연봉을 그대로 넣으면 됩니다.
@@ -54,19 +57,26 @@ export default function GuidePage() {
         </section>
 
         <section className="mt-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-lg font-semibold">자주 묻는 질문</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+            <span className="h-5 w-1.5 rounded-full bg-indigo-500" />
+            자주 묻는 질문
+          </h2>
           <div className="mt-3 divide-y divide-slate-100">
             {faqs.map((f) => (
               <div key={f.q} className="py-4">
-                <h3 className="text-sm font-semibold text-slate-800">Q. {f.q}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{f.a}</p>
+                <h3 className="text-sm font-semibold text-slate-800">
+                  <span className="text-indigo-600">Q.</span> {f.q}
+                </h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                  <span className="font-semibold text-slate-400">A.</span> {f.a}
+                </p>
               </div>
             ))}
           </div>
         </section>
 
         <p className="mt-6 text-sm">
-          <Link href="/" className="font-medium text-blue-600 hover:underline">
+          <Link href="/" className="font-medium text-indigo-600 hover:underline">
             ← 계산기로 돌아가기
           </Link>
         </p>

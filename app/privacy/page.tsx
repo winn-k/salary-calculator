@@ -50,7 +50,7 @@ export default function PrivacyPage() {
             href="https://www.google.com/settings/ads"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
+            className="text-indigo-600 hover:underline"
           >
             Google 광고 설정
           </a>
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
             href="https://www.aboutads.info"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
+            className="text-indigo-600 hover:underline"
           >
             www.aboutads.info
           </a>
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
         </p>
 
         <p className="mt-8 text-sm">
-          <Link href="/" className="font-medium text-blue-600 hover:underline">
+          <Link href="/" className="font-medium text-indigo-600 hover:underline">
             ← 계산기로 돌아가기
           </Link>
         </p>

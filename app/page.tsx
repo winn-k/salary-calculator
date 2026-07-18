@@ -48,7 +48,7 @@ export default function Home() {
         <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
           <label className="block">
             <span className="text-sm font-medium text-slate-700">연봉 (세전)</span>
-            <div className="mt-1 flex items-center rounded-xl border border-slate-300 px-3 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100">
+            <div className="mt-1 flex items-center rounded-xl border border-slate-300 px-3 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100">
               <input
                 inputMode="numeric"
                 value={salaryText}
@@ -63,7 +63,7 @@ export default function Home() {
           <div className="mt-4 grid grid-cols-2 gap-4">
             <label className="block">
               <span className="text-sm font-medium text-slate-700">월 비과세액</span>
-              <div className="mt-1 flex items-center rounded-xl border border-slate-300 px-3 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100">
+              <div className="mt-1 flex items-center rounded-xl border border-slate-300 px-3 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100">
                 <input
                   inputMode="numeric"
                   value={nonTax}
@@ -78,7 +78,7 @@ export default function Home() {
 
             <label className="block">
               <span className="text-sm font-medium text-slate-700">부양가족 수</span>
-              <div className="mt-1 flex items-center rounded-xl border border-slate-300 px-3 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100">
+              <div className="mt-1 flex items-center rounded-xl border border-slate-300 px-3 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100">
                 <input
                   inputMode="numeric"
                   value={dependents}
@@ -95,10 +95,10 @@ export default function Home() {
 
         {/* 결과 카드 */}
         <section className="mt-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <div className="rounded-xl bg-blue-600 px-5 py-4 text-white">
-            <div className="text-sm opacity-90">월 예상 실수령액</div>
-            <div className="mt-1 text-3xl font-bold">{formatWon(result.monthlyNet)}</div>
-            <div className="mt-1 text-sm opacity-90">
+          <div className="rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-700 px-5 py-5 text-white shadow-lg shadow-indigo-200">
+            <div className="text-sm text-indigo-100">월 예상 실수령액</div>
+            <div className="mt-1 text-3xl font-bold tracking-tight">{formatWon(result.monthlyNet)}</div>
+            <div className="mt-1 text-sm text-indigo-100">
               연 {formatWon(result.annualNet)} · 세전 월 {formatWon(result.monthlyGross)}
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function Home() {
             ))}
             <li className="flex items-center justify-between pt-3 text-sm font-semibold">
               <span className="text-slate-700">공제 합계</span>
-              <span className="text-red-600">- {formatWon(result.totalDeduction)}</span>
+              <span className="text-rose-600">- {formatWon(result.totalDeduction)}</span>
             </li>
           </ul>
         </section>
@@ -128,7 +128,8 @@ export default function Home() {
 
         {/* 설명 콘텐츠 (SEO / 이용자 안내) */}
         <section className="mt-8 rounded-2xl bg-white p-6 text-sm leading-relaxed text-slate-600 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-base font-semibold text-slate-800">
+          <h2 className="flex items-center gap-2 text-base font-semibold text-slate-900">
+            <span className="h-4 w-1 rounded-full bg-indigo-500" />
             연봉 실수령액이란?
           </h2>
           <p className="mt-2">
@@ -137,7 +138,10 @@ export default function Home() {
             비과세 항목(식대 등)과 부양가족 수에 따라 실수령액이 달라집니다.
           </p>
 
-          <h2 className="mt-5 text-base font-semibold text-slate-800">공제 항목 한눈에</h2>
+          <h2 className="mt-6 flex items-center gap-2 text-base font-semibold text-slate-900">
+            <span className="h-4 w-1 rounded-full bg-indigo-500" />
+            공제 항목 한눈에
+          </h2>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>국민연금: 과세 대상 월급의 4.5% (기준소득월액 상·하한 적용)</li>
             <li>건강보험: 과세 대상 월급의 3.545%</li>
@@ -148,7 +152,7 @@ export default function Home() {
 
           <p className="mt-5">
             더 자세한 사용 방법과 자주 묻는 질문은{" "}
-            <Link href="/guide" className="font-medium text-blue-600 hover:underline">
+            <Link href="/guide" className="font-medium text-indigo-600 hover:underline">
               사용법·FAQ 페이지
             </Link>
             에서 확인하실 수 있습니다.

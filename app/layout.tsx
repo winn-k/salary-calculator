@@ -51,17 +51,17 @@ export default function RootLayout({
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
-        <header className="border-b border-slate-200 bg-white">
+      <body className="min-h-full flex flex-col bg-slate-50 font-sans text-slate-900">
+        <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex w-full max-w-xl items-center justify-between px-4 py-3">
             <Link href="/" className="font-bold text-slate-900">
               💰 연봉 계산기
             </Link>
             <nav className="flex gap-4 text-sm text-slate-500">
-              <Link href="/" className="hover:text-slate-900">
+              <Link href="/" className="transition-colors hover:text-indigo-600">
                 계산기
               </Link>
-              <Link href="/guide" className="hover:text-slate-900">
+              <Link href="/guide" className="transition-colors hover:text-indigo-600">
                 사용법·FAQ
               </Link>
             </nav>
@@ -73,16 +73,16 @@ export default function RootLayout({
         <footer className="border-t border-slate-200 bg-white">
           <div className="mx-auto w-full max-w-xl px-4 py-6 text-sm text-slate-500">
             <nav className="flex flex-wrap gap-x-4 gap-y-2">
-              <Link href="/" className="hover:text-slate-900">
+              <Link href="/" className="transition-colors hover:text-indigo-600">
                 홈
               </Link>
-              <Link href="/guide" className="hover:text-slate-900">
+              <Link href="/guide" className="transition-colors hover:text-indigo-600">
                 사용법·FAQ
               </Link>
-              <Link href="/privacy" className="hover:text-slate-900">
+              <Link href="/privacy" className="transition-colors hover:text-indigo-600">
                 개인정보처리방침
               </Link>
-              <Link href="/terms" className="hover:text-slate-900">
+              <Link href="/terms" className="transition-colors hover:text-indigo-600">
                 이용약관
               </Link>
             </nav>
