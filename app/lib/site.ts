@@ -15,6 +15,6 @@ export const site = {
     naver: "dbb0fea7bbc9a80f1b3dce2372b0e607dda6ca7f",
   },
 
-  // 구글 애드센스 게시자 ID (승인 후 발급되는 ca-pub-XXXXXXXX 형식)
-  adsensePublisherId: "",
+  // 구글 애드센스 게시자 ID (ca-pub-XXXXXXXX 형식)
+  adsensePublisherId: "ca-pub-4065467806283088",
 } as const;

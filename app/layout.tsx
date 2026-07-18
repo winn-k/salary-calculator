@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "./lib/site";
@@ -45,6 +46,9 @@ export const metadata: Metadata = {
       ? { "naver-site-verification": site.verification.naver }
       : undefined,
   },
+  other: site.adsensePublisherId
+    ? { "google-adsense-account": site.adsensePublisherId }
+    : {},
 };
 
 export default function RootLayout({
@@ -58,6 +62,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-slate-50 font-sans text-slate-900">
+        {site.adsensePublisherId && (
+          <Script
+            id="adsbygoogle-init"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${site.adsensePublisherId}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
         <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex w-full max-w-xl items-center justify-between px-4 py-3">
             <Link href="/" className="font-bold text-slate-900">
