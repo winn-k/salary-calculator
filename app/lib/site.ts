@@ -12,7 +12,7 @@ export const site = {
     // 구글 서치콘솔 > HTML 태그 방식의 content="..." 값
     google: "BPURTC_2216BDkf1V7Yy53EQ38fNVtUGmc6f1-MpXPc",
     // 네이버 서치어드바이저 > HTML 태그 방식의 content="..." 값
-    naver: "",
+    naver: "dbb0fea7bbc9a80f1b3dce2372b0e607dda6ca7f",
   },
 
   // 구글 애드센스 게시자 ID (승인 후 발급되는 ca-pub-XXXXXXXX 형식)
