@@ -39,6 +39,12 @@ export const metadata: Metadata = {
     description: site.description,
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: site.verification.google || undefined,
+    other: site.verification.naver
+      ? { "naver-site-verification": site.verification.naver }
+      : undefined,
+  },
 };
 
 export default function RootLayout({
